@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Calories Calculation Result
+{% endblock %}
+
+{% block main %}
+    <h1>Calorie Needs</h1>
+    <p>Your estimated calorie needs: {{ calorie_needs }} kcal</p>
+    <p>Your estimated carb needs: {{ carbs }} kcal = {{ (carbs/4)|round(2) }} grams</p>
+    <p>Your estimated protein needs: {{ protein }} kcal = {{ (protein/4)|round(2) }} grams</p>
+    <p>Your estimated fat needs: {{ fat }} kcal = {{ (fat/4)|round(2) }} grams</p>
+{% endblock %}

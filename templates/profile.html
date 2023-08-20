@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Profile
+{% endblock %}
+
+{% block main %}
+    <div class="container">
+        <h2>Welcome to GetFIT!</h2>
+        <p>Select a tool to get started:</p>
+        <div class="btn-group" id="btnGroup">
+            <button id="mainButton" class="btn btn-primary">Select a Tool</button>
+            <a href="/cal_calc" id="calButton" class="btn btn-primary" style="display: none;">Calorie Calculator</a>
+            <a href="/bodyfat" id="bodyFatButton" class="btn btn-secondary" style="display: none;">Body Fat Calculator</a>
+            <a href="/training_history" id="trainingButton" class="btn btn-success" style="display: none;">Training</a>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Training History
+{% endblock %}
+
+{% block main %}
+    <div class="container">
+        <h1 class="mt-4 mb-3">Trainings</h1>
+        <form method="POST" action="/training_history">
+            <div class="form-group">
+                <label for="training">Training:</label>
+                <input type="text" class="form-control" id="training" name="training" required>
+            </div>
+            <div class="form-group">
+                <label for="training">Weight (kg):</label>
+                <input type="text" class="form-control" id="weight" name="weight" required>
+            </div>
+            <div class="form-group">
+                <label for="duration">Duration (minutes):</label>
+                <input type="number" class="form-control" id="duration" name="duration" required>
+            </div>
+            <div class="form-group">
+                <label for="activity">Activity:</label>
+                <select class="form-control" id="activity" name="activity" required>
+                    <option selected disabled value="">Select activity level</option>
+                    <option value="low">Low</option>
+                    <option value="medium">Medium</option>
+                    <option value="high">High</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="breaks">Breaks (number):</label>
+                <input type="number" class="form-control" id="breaks" name="breaks" required>
+            </div>
+            <button type="submit" class="btn btn-primary mt-3">Submit</button>
+        </form>
+    </div>
+{% endblock %}

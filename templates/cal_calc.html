@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Calories Calculation
+{% endblock %}
+
+{% block main %}
+    <form action="/cal_calc" method="post">
+        <div class="mb-3">
+            <select class="form-select" id="gender" name="gender" aria-label="Default select example">
+                <option selected disabled value="gender">Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="weight" name="weight" placeholder="Weight(kg)" type="text">
+        </div>
+        <div class="mb-3">
+            <input class="form-control mx-auto w-auto" id="height" name="height" placeholder="Height(cm)" type="text">
+        </div>
+        <div class="mb-3">
+            <input class="form-control mx-auto w-auto" id="age" name="age" placeholder="Age" type="text">
+        </div>
+        <div class="mb-3">
+            <select class="form-select" id="activity" name="activity" aria-label="Default select example">
+                <option selected disabled value="activity">Activity</option>
+                <option value="low">Low</option>
+                <option value="medium">Medium</option>
+                <option value="high">High</option>
+            </select>
+        </div>
+        <p>If you want to gain weight give it in positiv number (0.5) else give it in negative number (-0.5)</p>
+        <div class="mb-3">
+            <input class="form-control mx-auto w-auto" id="weight_goal" name="weight_goal" placeholder="Weight goal (kg/week)" type="text">
+        </div>
+        <button type="submit" class="btn btn-dark">Calculate</button>
+    </form>
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Training Results
+{% endblock %}
+
+{% block main %}
+    <div class="container">
+        <h1 class="mt-4 mb-3">Training Results</h1>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Training</th>
+                    <th>Duration (minutes)</th>
+                    <th>Activity Level</th>
+                    <th>Breaks</th>
+                    <th>Calories Burned</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in rows %}
+                    <tr>
+                        <td>{{ row.training }}</td>
+                        <td>{{ row.duration }}</td>
+                        <td>{{ row.activity }}</td>
+                        <td>{{ row.breaks }}</td>
+                        <td>{{ row.calories_burned | round(2)}}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

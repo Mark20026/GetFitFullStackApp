@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Bodyfat History
+{% endblock %}
+
+{% block main %}
+    <div class="container">
+        <h1>Body Fat History</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>No.</th>
+                    <th>Body Fat</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in rows %}
+                <tr>
+                    <td>{{ loop.index }}</td>
+                    <td>{{ row.bodyfat }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

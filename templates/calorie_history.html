@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Calories History
+{% endblock %}
+
+{% block main %}
+    <div class="container">
+            <h1 class="my-4">Calorie Intake History</h1>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">Date</th>
+                        <th scope="col">Calorie Needs</th>
+                        <th scope="col">Carbs</th>
+                        <th scope="col">Protein</th>
+                        <th scope="col">Fat</th>
+                        <th scope="col">Weight Goal</th>
+                        <th scope="col">Current Weight</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for row in rows %}
+                    <tr>
+                        <td>{{ row.date }}</td>
+                        <td>{{ row.calorie_needs | round(2) }}</td>
+                        <td>{{ row.carbs | round(2) }}</td>
+                        <td>{{ row.protein | round(2) }}</td>
+                        <td>{{ row.fat | round(2) }}</td>
+                        <td>{{ row.weight_goal | round(2) }}</td>
+                        <td>{{ row.weight | round(2) }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+{% endblock %}
